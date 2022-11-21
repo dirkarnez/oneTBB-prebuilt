@@ -48,7 +48,9 @@ jobs:
             -DTBB_FIND_PACKAGE=OFF ^
             -DBUILD_SHARED_LIBS=OFF ^
             -DCMAKE_INSTALL_PREFIX="cmake-build/${{ env.cmakeInstallationPath }}" -B./cmake-build &&^
-            cd cmake-build && cmake --build . && cmake --install . 
+            cd cmake-build &&^
+            cmake --build . -- compiler=gcc arch=intel64 runtime=mingw tbb tbbmalloc &&^
+            cmake --install . 
             
       - name: Archive Release
         uses: thedoctor0/zip-release@master
