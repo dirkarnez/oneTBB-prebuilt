@@ -71,6 +71,7 @@ jobs:
             -DCMAKE_BUILD_TYPE=Release ^
             -DBUILD_SHARED_LIBS=OFF ^
             -DTBB_TEST=OFF ^
+            -DTBB_BENCH=OFF ^
             -DTBB_FIND_PACKAGE=OFF ^
             -DBUILD_SHARED_LIBS=OFF ^
             -DCMAKE_INSTALL_PREFIX="cmake-build/${{ env.cmakeInstallationPath }}" -B./cmake-build &&^
