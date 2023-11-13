@@ -31,12 +31,12 @@ jobs:
       repository: oneapi-src/oneTBB
       libraryName: oneTBB
       cmakeInstallationPath: oneTBB-installation
-      tagName: v2021.7.0
+      tagName: v2021.10.0
     steps:
     
       - uses: actions/checkout@v4
         with:
-          repository: libocca/occa
+          repository: ${{ env.repository }}
           ref: ${{ env.tagName }}
           path: ${{ env.libraryName }}
           submodules: true
